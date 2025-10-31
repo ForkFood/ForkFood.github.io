@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shawarma Wrap - Authentic Syrian Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35; /* Vibrant orange */
+            --secondary: #F7931E; /* Warm amber */
+            --accent: #FFD166; /* Bright yellow */
+            --cream: #FFF9F0; /* Light warm background */
+            --dark: #2D2D2D; /* Modern dark text */
+            --gold: #FFC43D;
+            --green: #06D6A0; /* Fresh accent */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: var(--cream);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s, transform 0.2s;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo {
+            width: 280px;
+            max-width: 90%;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+            border-radius: 12px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: white;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1.1rem 2.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+            background: #fff;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            color: var(--primary);
+            position: relative;
+            font-weight: 800;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* Story Section */
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .story-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Menu Section */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .menu-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--secondary);
+        }
+
+        .menu-category.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .menu-category:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .menu-category img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .menu-category h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+
+        .menu-item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .menu-notes {
+            background: linear-gradient(135deg, #FFF3CD 0%, #FFE4B5 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            font-style: normal;
+            font-weight: 600;
+            color: #856404;
+            text-align: center;
+            max-width: 800px;
+            margin: 2.5rem auto 0;
+        }
+
+        .menu-notes p {
+            margin: 0.4rem 0;
+        }
+
+        /* Order Section */
+        .order-section {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--gold) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .order-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+
+        .order-platforms {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .platform-card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .platform-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .platform-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .platform-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .platform-card p {
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .platform-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .platform-btn:hover {
+            background: #e55a2b;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Hours & Contact Section */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2.2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .info-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .hours-list {
+            list-style: none;
+        }
+
+        .hours-list li {
+            padding: 0.6rem 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.05rem;
+        }
+
+        .hours-list li span:first-child {
+            font-weight: 600;
+        }
+
+        .hours-list li span:last-child {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .contact-item {
+            margin: 1.2rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 700;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+
+        /* Catering Section */
+        .catering-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            border-radius: 25px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .catering-content {
+            padding: 3.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.6s ease;
+        }
+
+        .catering-content.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .catering-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 1.2rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .catering-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .catering-btn {
+            background: white;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .catering-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+            font-size: 1.05rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .logo {
+                width: 220px;
+            }
+
+            .btn {
+                padding: 0.9rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#order">Order Now</a></li>
+            <li><a href="#catering">Catering</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23FFF8DC'/%3E%3Ctext x='200' y='200' font-size='48' text-anchor='middle' fill='%238B4513' font-family='Georgia, serif' font-weight='bold'%3EShawarma Wrap%3C/text%3E%3C/svg%3E" alt="Shawarma Wrap Logo" class="logo">
+            <h1>Authentic Syrian Cuisine</h1>
+            <p>Experience the True Taste of Damascus</p>
+            <div class="cta-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#order" class="btn btn-secondary">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story">
+        <h2 class="section-title">Our Story</h2>
+        <div class="story-content">
+            <p>Welcome to Shawarma Wrap, where the rich culinary traditions of Syria come alive in every bite. Our journey began with a passion for sharing the authentic flavors of Damascus – from perfectly spiced shawarma wraps to traditional Syrian breakfast dishes.</p>
+            <br>
+            <p>We use only the finest ingredients and time-honored recipes passed down through generations. Each dish is crafted with love and respect for Syrian heritage, bringing you an authentic taste of the Middle East right here in your neighborhood.</p>
+            <br>
+            <p>From our family to yours, we invite you to experience the warmth, hospitality, and incredible flavors that make Syrian cuisine truly special.</p>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2 class="section-title">Our Menu</h2>
+        
+        <div class="menu-grid">
+            <!-- Shawarma -->
+            <div class="menu-category">
+                <img src="https://tb-static.uber.com/prod/image-proc/processed_images/7d2cec775de58d8ee4886b07634eb1bb/19ec62ba51fde35ba0aff5b84321c5af.jpeg" alt="Shawarma Wrap">
+                <h3>🌯 Shawarma</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Shawarma (Wrap)</span>
+                    <span class="menu-item-price">$12.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Shawarma (Meal)</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat Shawarma (Wrap)</span>
+                    <span class="menu-item-price">$14.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat Shawarma (Meal)</span>
+                    <span class="menu-item-price">$19.00</span>
+                </div>
+            </div>
+
+            <!-- Meal Deals -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/F7931E/FFFFFF?text=Family+Platters" alt="Family Platters">
+                <h3>👨‍👩‍👧‍👦 Family & Platters</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Family Meal<br><small>(4 wraps, 1 large chips + 2 drinks)</small></span>
+                    <span class="menu-item-price">$60.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">East Plate<br><small>(2 Falafel, 1 Shawarma, Hummus, chips, coleslaw)</small></span>
+                    <span class="menu-item-price">$30.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Arabic Shawarma Platter<br><small>(mixed meat & chicken, chips, coleslaw + soft drink)</small></span>
+                    <span class="menu-item-price">$30.00</span>
+                </div>
+            </div>
+
+            <!-- Snack Packs -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/FF6B35/FFFFFF?text=Snack+Packs" alt="Snack Packs">
+                <h3>🍟 Snack Packs</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Mixed Snacks Pack (M)</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Mixed Snacks Pack (L)</span>
+                    <span class="menu-item-price">$20.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Snack Pack (M)</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chicken Snack Pack (L)</span>
+                    <span class="menu-item-price">$18.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat Snack Pack (M)</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat Snack Pack (L)</span>
+                    <span class="menu-item-price">$20.00</span>
+                </div>
+            </div>
+
+            <!-- Manoush -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/FFD166/2D2D2D?text=Manoush" alt="Manoush">
+                <h3>🫓 Manoush</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat</span>
+                    <span class="menu-item-price">$8.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat & Cheese</span>
+                    <span class="menu-item-price">$9.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Cheese</span>
+                    <span class="menu-item-price">$9.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Halloumi Cheese</span>
+                    <span class="menu-item-price">$9.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Cheese Pie</span>
+                    <span class="menu-item-price">$9.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Cheese & Veg</span>
+                    <span class="menu-item-price">$10.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Sojok & Cheese</span>
+                    <span class="menu-item-price">$9.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Sojok & Veg & Cheese</span>
+                    <span class="menu-item-price">$10.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Shanklish</span>
+                    <span class="menu-item-price">$8.00</span>
+                </div>
+            </div>
+
+            <!-- Oregano -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/06D6A0/FFFFFF?text=Oregano" alt="Oregano">
+                <h3>🌿 Oregano</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Oregano</span>
+                    <span class="menu-item-price">$3.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Oregano & Cheese</span>
+                    <span class="menu-item-price">$7.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Oregano & Veg</span>
+                    <span class="menu-item-price">$7.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Oregano & Veg & Labneh</span>
+                    <span class="menu-item-price">$7.00</span>
+                </div>
+            </div>
+
+            <!-- Spinach & Manakish -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/FF6B35/FFFFFF?text=Spinach+Manakish" alt="Spinach & Manakish">
+                <h3>🥬 Spinach & Manakish</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Spinach</span>
+                    <span class="menu-item-price">$9.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Spinach & Cheese</span>
+                    <span class="menu-item-price">$10.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Kaka & Cheese</span>
+                    <span class="menu-item-price">$8.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Kaka & Veg & Cheese</span>
+                    <span class="menu-item-price">$10.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Veg Pizza</span>
+                    <span class="menu-item-price">$12.00</span>
+                </div>
+            </div>
+
+            <!-- Dozen Items -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/F7931E/FFFFFF?text=Dozen+Packs" alt="Dozen Packs">
+                <h3>📦 Dozen Packs</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Spinach Meat (x12)</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Spinach Veg (x12)</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Spinach Cheese (x12)</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Zatar (x12)</span>
+                    <span class="menu-item-price">$12.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Mix (x36)</span>
+                    <span class="menu-item-price">$55.00</span>
+                </div>
+            </div>
+
+            <!-- Safiha -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/FFD166/2D2D2D?text=Safiha" alt="Safiha">
+                <h3>🥟 Safiha</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Safiha Meat (x12)</span>
+                    <span class="menu-item-price">$20.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Safiha Mix (x36)</span>
+                    <span class="menu-item-price">$55.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Safiha Veg (x12)</span>
+                    <span class="menu-item-price">$20.00</span>
+                </div>
+            </div>
+
+            <!-- Breakfast -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/06D6A0/FFFFFF?text=Breakfast" alt="Breakfast">
+                <h3>🍳 Breakfast</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Foul Bil Zat</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Foul Tahini</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Hummus Meat</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat Egg</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Sojok Eggs</span>
+                    <span class="menu-item-price">$18.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Omelette Veg</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Shakshuka</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Hummus Fatteh</span>
+                    <span class="menu-item-price">$18.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Meat Fatteh</span>
+                    <span class="menu-item-price">$18.00</span>
+                </div>
+            </div>
+
+            <!-- Main Course -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/FF6B35/FFFFFF?text=Main+Course" alt="Main Course">
+                <h3>🍽️ Main Course</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Lamb Mansaf</span>
+                    <span class="menu-item-price">$25.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Jordan Mansaf</span>
+                    <span class="menu-item-price">$25.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Lentil Soup</span>
+                    <span class="menu-item-price">$10.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Coleslaw</span>
+                    <span class="menu-item-price">$5.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Hummus Meat</span>
+                    <span class="menu-item-price">$17.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Hummus Chicken</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Shish Tawook</span>
+                    <span class="menu-item-price">$22.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Mixed Sambosa</span>
+                    <span class="menu-item-price">$14.00</span>
+                </div>
+            </div>
+
+            <!-- Side Dishes -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/F7931E/FFFFFF?text=Side+Dishes" alt="Side Dishes">
+                <h3>🥗 Side Dishes</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Tabouli (S)</span>
+                    <span class="menu-item-price">$12.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Tabouli (M)</span>
+                    <span class="menu-item-price">$15.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Tabouli (L)</span>
+                    <span class="menu-item-price">$18.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chips (S)</span>
+                    <span class="menu-item-price">$5.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chips (M)</span>
+                    <span class="menu-item-price">$8.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Chips (L)</span>
+                    <span class="menu-item-price">$11.00</span>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category">
+                <img src="https://placehold.co/320x180/FFD166/2D2D2D?text=Desserts" alt="Desserts">
+                <h3>🍮 Desserts</h3>
+                <div class="menu-item">
+                    <span class="menu-item-name">Custard</span>
+                    <span class="menu-item-price">$5.00</span>
+                </div>
+                <div class="menu-item">
+                    <span class="menu-item-name">Rice Pudding</span>
+                    <span class="menu-item-price">$5.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-notes">
+            <p><strong>📌 Note:</strong> Prices may increase without prior notice. Please check with us for current pricing.</p>
+            <p><strong>⚠️ Availability:</strong> Some menu items may not be available at all times. Please contact us to confirm before ordering.</p>
+        </div>
+    </section>
+
+    <!-- Order Now Section -->
+    <section id="order" class="order-section">
+        <h2 class="section-title">Order Now</h2>
+        <div class="order-platforms">
+            <div class="platform-card">
+                <h3>UberEats</h3>
+                <p>Get it delivered fast!</p>
+                <a href="https://www.ubereats.com/au/store/shawarma-wrap-yagoona/rMdSrgrQTnmJLnLMRXGprA?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjQ5OSUyMEh1bWUlMjBIaWdod2F5JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyMWJlNWM4YmYtYTVhOS0zNmE3LTJhZmItMWUxNjJmYTI5YWIwJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EtMzMuOTA3NDM0MiUyQyUyMmxvbmdpdHVkZSUyMiUzQTE1MS4wMjI0ODMxJTdE&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" class="platform-btn">Order on UberEats</a>
+            </div>
+            <div class="platform-card">
+                <h3>Menulog</h3>
+                <p>Quick & easy delivery</p>
+                <a href="https://www.menulog.com.au/restaurants-shawarma-wrap-yagoona/menu?serviceType=delivery&utm_source=google&utm_medium=organic&utm_campaign=foodorder" target="_blank" rel="noopener noreferrer" class="platform-btn">Order on Menulog</a>
+            </div>
+            <div class="platform-card">
+                <h3>DoorDash</h3>
+                <p>Fresh to your door</p>
+                <a href="https://www.doordash.com/store/shawarma-wrap-yagoona-32736607/82362762/?pickup=true&rwg_token=ACgRB3cRSs0NUe9NKSXLJHtMHsGQWktNfnYDdM625pJB40KkMeBTDLe4oYSqMh_4nkIWnpGkTf3ntpwkm1rrh0jnA3X26PGyLQ==&utm_campaign=gpa" target="_blank" rel="noopener noreferrer" class="platform-btn">Order on DoorDash</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering">
+        <h2 class="section-title">Catering Services</h2>
+        <div class="catering-section">
+            <div class="catering-content">
+                <h3>🎉 Planning an Event?</h3>
+                <p>We offer authentic Syrian catering for all occasions – weddings, corporate events, parties, and more!</p>
+                <p>Let us bring the flavors of Damascus to your special celebration.</p>
+                <a href="#contact" class="catering-btn">Contact Us for Catering</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Visit Us</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>📍 Location</h3>
+                <p><strong>Shawarma Wrap</strong></p>
+                <p>499 Hume Highway</p>
+                <p>Yagoona NSW 2199, Australia</p>
+                <br>
+                <a href="https://maps.app.goo.gl/kYoTM3z75MPXrrtZ8" target="_blank" class="btn btn-primary" style="background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700;">Get Directions</a>
+            </div>
+
+            <div class="info-card">
+                <h3>🕐 Opening Hours</h3>
+                <ul class="hours-list">
+                    <li><span>Monday</span><span style="color: #FF6B35; font-weight: bold;">Closed</span></li>
+                    <li><span>Tuesday</span><span>12 PM–12 AM</span></li>
+                    <li><span>Wednesday</span><span>12 PM–12 AM</span></li>
+                    <li><span>Thursday</span><span>12 PM–12 AM</span></li>
+                    <li><span>Friday</span><span>12 PM–12 AM</span></li>
+                    <li><span>Saturday</span><span>12 PM–12 AM</span></li>
+                    <li><span>Sunday</span><span>12 PM–12 AM</span></li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3>📞 Contact Us</h3>
+                <div class="contact-item">
+                    <strong>Landline:</strong><br>
+                    <a href="tel:0297937393">02 9793 7393</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Arabic Mobile:</strong><br>
+                    <a href="tel:0488428732">0488 428 732</a>
+                </div>
+                <div class="contact-item">
+                    <strong>English Mobile:</strong><br>
+                    <a href="tel:0410207299">0410 207 299</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong><br>
+                    <a href="mailto:Toka908@yahoo.com">Toka908@yahoo.com</a>
+                </div>
+                <br>
+                <a href="#order" class="btn btn-primary" style="background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700;">Order Online</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Shawarma Wrap - Authentic Syrian Cuisine</p>
+        <p>Designed by <a href="#">Medo Hamdani</a> | <a href="https://instagram.com/BizMapper" target="_blank">BizMapper</a></p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const href = this.getAttribute('href');
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                return false;
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.section-title, .story-content, .menu-category, .platform-card, .info-card, .catering-content').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add stagger effect to menu categories
+        const menuCategories = document.querySelectorAll('.menu-category');
+        menuCategories.forEach((category, index) => {
+            category.style.transitionDelay = `${index * 0.05}s`;
+        });
+
+        // Add stagger effect to platform cards
+        const platformCards = document.querySelectorAll('.platform-card');
+        platformCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Navbar background on scroll
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 8px 20px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
+
