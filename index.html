@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EF6N5ZLN6Y"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EF6N5ZLN6Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-EF6N5ZLN6Y');
-</script>
+        gtag('config', 'G-EF6N5ZLN6Y');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shawarma Wrap - Authentic Syrian Cuisine</title>
@@ -22,13 +23,19 @@
         }
 
         :root {
-            --primary: #FF6B35; /* Vibrant orange */
-            --secondary: #F7931E; /* Warm amber */
-            --accent: #FFD166; /* Bright yellow */
-            --cream: #FFF9F0; /* Light warm background */
-            --dark: #2D2D2D; /* Modern dark text */
+            --primary: #FF6B35;
+            /* Vibrant orange */
+            --secondary: #F7931E;
+            /* Warm amber */
+            --accent: #FFD166;
+            /* Bright yellow */
+            --cream: #FFF9F0;
+            /* Light warm background */
+            --dark: #2D2D2D;
+            /* Modern dark text */
             --gold: #FFC43D;
-            --green: #06D6A0; /* Fresh accent */
+            --green: #06D6A0;
+            /* Fresh accent */
         }
 
         body {
@@ -45,7 +52,7 @@
             top: 0;
             width: 100%;
             background: white;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             padding: 1rem 2rem;
             z-index: 1000;
             backdrop-filter: blur(10px);
@@ -115,13 +122,20 @@
             max-width: 90%;
             margin-bottom: 2rem;
             animation: float 3s ease-in-out infinite;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
             border-radius: 12px;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
         }
 
         @keyframes fadeInUp {
@@ -129,6 +143,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -140,7 +155,7 @@
             font-size: 3.5rem;
             color: white;
             margin-bottom: 1.2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             font-weight: 800;
             line-height: 1.2;
         }
@@ -171,7 +186,7 @@
             display: inline-block;
             font-weight: 700;
             font-family: 'Poppins', sans-serif;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-primary {
@@ -244,7 +259,7 @@
             background: white;
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         .story-content.visible {
@@ -264,7 +279,7 @@
             background: white;
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
@@ -289,7 +304,7 @@
 
         .menu-category:hover {
             transform: translateY(-12px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .menu-category img {
@@ -365,7 +380,7 @@
             right: -50%;
             width: 100%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
             transform: rotate(30deg);
         }
 
@@ -383,7 +398,7 @@
             padding: 2.2rem;
             border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             transition: all 0.4s ease;
             opacity: 0;
             transform: scale(0.9);
@@ -396,7 +411,7 @@
 
         .platform-card:hover {
             transform: translateY(-12px) scale(1.03);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .platform-card h3 {
@@ -443,7 +458,7 @@
             background: white;
             padding: 2.2rem;
             border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
             opacity: 0;
             transform: translateX(-30px);
             transition: all 0.6s ease;
@@ -562,12 +577,12 @@
             font-weight: 700;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         .catering-btn:hover {
             transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
@@ -649,6 +664,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <ul>
@@ -676,17 +692,22 @@
     <section id="story">
         <h2 class="section-title">Our Story</h2>
         <div class="story-content">
-            <p>Welcome to Shawarma Wrap, where the rich culinary traditions of Syria come alive in every bite. Our journey began with a passion for sharing the authentic flavors of Damascus – from perfectly spiced shawarma wraps to traditional Syrian breakfast dishes.</p>
+            <p>Welcome to Shawarma Wrap, where the rich culinary traditions of Syria come alive in every bite. Our
+                journey began with a passion for sharing the authentic flavors of Damascus – from perfectly spiced
+                shawarma wraps to our signature traditional dishes.</p>
             <br>
-            <p>We use only the finest ingredients and time-honored recipes passed down through generations. Each dish is crafted with love and respect for Syrian heritage, bringing you an authentic taste of the Middle East right here in your neighborhood.</p>
+            <p>We use only the finest ingredients and time-honored recipes passed down through generations. Each dish is
+                crafted with love and respect for Syrian heritage, bringing you an authentic taste of the Middle East
+                right here in your neighborhood.</p>
             <br>
-            <p>From our family to yours, we invite you to experience the warmth, hospitality, and incredible flavors that make Syrian cuisine truly special.</p>
+            <p>From our family to yours, we invite you to experience the warmth, hospitality, and incredible flavors
+                that make Syrian cuisine truly special.</p>
         </div>
     </section>
 
     <section id="menu">
         <h2 class="section-title">Our Menu</h2>
-        
+
         <div class="menu-grid">
             <div class="menu-category">
                 <img src="Images/ChickenShawarma.png" alt="Shawarma Wrap">
@@ -713,15 +734,18 @@
                 <img src="Images/ArabicShawarmaPlate.png" alt="Family Platters">
                 <h3>👨‍👩‍👧‍👦 Family & Platters</h3>
                 <div class="menu-item">
-                    <span class="menu-item-name">Family Meal<br><small>(4 wraps, 1 large chips + 2 drinks)</small></span>
+                    <span class="menu-item-name">Family Meal<br><small>(4 wraps, 1 large chips + 2
+                            drinks)</small></span>
                     <span class="menu-item-price">$60.00</span>
                 </div>
                 <div class="menu-item">
-                    <span class="menu-item-name">East Plate<br><small>(2 Falafel, 1 Shawarma, Hummus, chips, coleslaw)</small></span>
+                    <span class="menu-item-name">East Plate<br><small>(2 Falafel, 1 Shawarma, Hummus, chips,
+                            coleslaw)</small></span>
                     <span class="menu-item-price">$30.00</span>
                 </div>
                 <div class="menu-item">
-                    <span class="menu-item-name">Arabic Shawarma Platter<br><small>(mixed meat & chicken, chips, coleslaw + soft drink)</small></span>
+                    <span class="menu-item-name">Arabic Shawarma Platter<br><small>(mixed meat & chicken, chips,
+                            coleslaw + soft drink)</small></span>
                     <span class="menu-item-price">$30.00</span>
                 </div>
             </div>
@@ -752,47 +776,6 @@
                 <div class="menu-item">
                     <span class="menu-item-name">Meat Snack Pack (L)</span>
                     <span class="menu-item-price">$20.00</span>
-                </div>
-            </div>
-
-            <div class="menu-category">
-                <img src="Images/Breakfast/ShawarmaWrap_Ful-Tahini_2880x2304-removebg-preview.png" alt="Breakfast">
-                <h3>🍳 Breakfast</h3>
-                <div class="menu-item">
-                    <span class="menu-item-name">Foul Bil Zat</span>
-                    <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Foul Tahini</span>
-                    <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Hummus Meat</span>
-                    <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Meat Egg</span>
-                    <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Sojok Eggs</span>
-                    <span class="menu-item-price">$18.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Omelette Veg</span>
-                    <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Shakshuka</span>
-                    <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Hummus Fatteh</span>
-                    <span class="menu-item-price">$18.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Meat Fatteh</span>
-                    <span class="menu-item-price">$18.00</span>
                 </div>
             </div>
 
@@ -837,16 +820,8 @@
                 <img src="Images/Sides/Tabouli_2880x2304.jpg" alt="Side Dishes">
                 <h3>🥗 Side Dishes</h3>
                 <div class="menu-item">
-                    <span class="menu-item-name">Tabouli (S)</span>
-                    <span class="menu-item-price">$12.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Tabouli (M)</span>
+                    <span class="menu-item-name">Tabouli</span>
                     <span class="menu-item-price">$15.00</span>
-                </div>
-                <div class="menu-item">
-                    <span class="menu-item-name">Tabouli (L)</span>
-                    <span class="menu-item-price">$18.00</span>
                 </div>
                 <div class="menu-item">
                     <span class="menu-item-name">Chips (S)</span>
@@ -877,8 +852,10 @@
         </div>
 
         <div class="menu-notes">
-            <p><strong>📌 Note:</strong> Prices may increase without prior notice. Please check with us for current pricing.</p>
-            <p><strong>⚠️ Availability:</strong> Some menu items may not be available at all times. Please contact us to confirm before ordering.</p>
+            <p><strong>📌 Note:</strong> Prices may increase without prior notice. Please check with us for current
+                pricing.</p>
+            <p><strong>⚠️ Availability:</strong> Some menu items may not be available at all times. Please contact us to
+                confirm before ordering.</p>
         </div>
     </section>
 
@@ -888,12 +865,14 @@
             <div class="platform-card">
                 <h3>UberEats</h3>
                 <p>Get it delivered fast!</p>
-                <a href="https://www.ubereats.com/au/store/shawarma-wrap-yagoona/rMdSrgrQTnmJLnLMRXGprA?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjQ5OSUyMEh1bWUlMjBIaWdod2F5JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyMWJlNWM4YmYtYTVhOS0zNmE3LTJhZmItMWUxNjJmYTI5YWIwJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EtMzMuOTA3NDM0MiUyQyUyMmxvbmdpdHVkZSUyMiUzQTE1MS4wMjI0ODMxJTdE&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas" target="_blank" rel="noopener noreferrer" class="platform-btn">Order on UberEats</a>
+                <a href="https://www.ubereats.com/au/store/shawarma-wrap-yagoona/rMdSrgrQTnmJLnLMRXGprA?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjQ5OSUyMEh1bWUlMjBIaWdod2F5JTIyJTJDJTIycmVmZXJlbmNlJTIyJTNBJTIyMWJlNWM4YmYtYTVhOS0zNmE3LTJhZmItMWUxNjJmYTI5YWIwJTIyJTJDJTIycmVmZXJlbmNlVHlwZSUyMiUzQSUyMnViZXJfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EtMzMuOTA3NDM0MiUyQyUyMmxvbmdpdHVkZSUyMiUzQTE1MS4wMjI0ODMxJTdE&utm_campaign=CM2508147-search-free-nonbrand-google-pas_e_all_acq_Global&utm_medium=search-free-nonbrand&utm_source=google-pas"
+                    target="_blank" rel="noopener noreferrer" class="platform-btn">Order on UberEats</a>
             </div>
             <div class="platform-card">
                 <h3>DoorDash</h3>
                 <p>Fresh to your door</p>
-                <a href="https://www.doordash.com/store/shawarma-wrap-yagoona-32736607/82362762/?pickup=true&rwg_token=ACgRB3cRSs0NUe9NKSXLJHtMHsGQWktNfnYDdM625pJB40KkMeBTDLe4oYSqMh_4nkIWnpGkTf3ntpwkm1rrh0jnA3X26PGyLQ==&utm_campaign=gpa" target="_blank" rel="noopener noreferrer" class="platform-btn">Order on DoorDash</a>
+                <a href="https://www.doordash.com/store/shawarma-wrap-yagoona-32736607/82362762/?pickup=true&rwg_token=ACgRB3cRSs0NUe9NKSXLJHtMHsGQWktNfnYDdM625pJB40KkMeBTDLe4oYSqMh_4nkIWnpGkTf3ntpwkm1rrh0jnA3X26PGyLQ==&utm_campaign=gpa"
+                    target="_blank" rel="noopener noreferrer" class="platform-btn">Order on DoorDash</a>
             </div>
         </div>
     </section>
@@ -903,7 +882,8 @@
         <div class="catering-section">
             <div class="catering-content">
                 <h3>🎉 Planning an Event?</h3>
-                <p>We offer authentic Syrian catering for all occasions – weddings, corporate events, parties, and more!</p>
+                <p>We offer authentic Syrian catering for all occasions – weddings, corporate events, parties, and more!
+                </p>
                 <p>Let us bring the flavors of Damascus to your special celebration.</p>
                 <a href="#contact" class="catering-btn">Contact Us for Catering</a>
             </div>
@@ -919,7 +899,9 @@
                 <p>499 Hume Highway</p>
                 <p>Yagoona NSW 2199, Australia</p>
                 <br>
-                <a href="https://maps.app.goo.gl/kYoTM3z75MPXrrtZ8" target="_blank" class="btn btn-primary" style="background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700;">Get Directions</a>
+                <a href="https://maps.app.goo.gl/kYoTM3z75MPXrrtZ8" target="_blank" class="btn btn-primary"
+                    style="background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700;">Get
+                    Directions</a>
             </div>
 
             <div class="info-card">
@@ -946,22 +928,21 @@
                     <a href="tel:0488428732">0488 428 732</a>
                 </div>
                 <div class="contact-item">
-                    <strong>English Mobile:</strong><br>
-                    <a href="tel:0410207299">0410 207 299</a>
-                </div>
-                <div class="contact-item">
                     <strong>Email:</strong><br>
                     <a href="mailto:Toka908@yahoo.com">Toka908@yahoo.com</a>
                 </div>
                 <br>
-                <a href="#order" class="btn btn-primary" style="background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700;">Order Online</a>
+                <a href="#order" class="btn btn-primary"
+                    style="background: var(--primary); color: white; padding: 0.8rem 2rem; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: 700;">Order
+                    Online</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2025 Shawarma Wrap - Authentic Syrian Cuisine</p>
-        <p>Designed by <a href="https://medohamdani.github.io/">Medo Hamdani</a> | <a href="https://instagram.com/BizMapper" target="_blank">BizMapper</a></p>
+        <p>© 2026 Shawarma Wrap - Authentic Syrian Cuisine</p>
+        <p>Designed by <a href="https://medohamdani.github.io/">Medo Hamdani</a> | <a
+                href="https://instagram.com/BizMapper" target="_blank">BizMapper</a></p>
     </footer>
 
     <script>
@@ -1024,4 +1005,5 @@
         });
     </script>
 </body>
+
 </html>
