@@ -662,6 +662,77 @@
                 max-width: 280px;
             }
         }
+
+        /* Gallery Section */
+        .gallery-carousel {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .gallery-track {
+            display: flex;
+            width: calc(400px * 8);
+            /* 4 images * 2 for seamless loop * 400px width */
+            animation: scroll 30s linear infinite;
+        }
+
+        .gallery-track:hover {
+            animation-play-state: paused;
+        }
+
+        .gallery-item {
+            width: 400px;
+            height: 300px;
+            flex-shrink: 0;
+            padding: 0 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-400px * 4));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-item {
+                width: 300px;
+                height: 220px;
+            }
+
+            .gallery-track {
+                width: calc(300px * 8);
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-300px * 4));
+                }
+            }
+        }
     </style>
 </head>
 
@@ -670,6 +741,7 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#story">Our Story</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#order">Order Now</a></li>
             <li><a href="#catering">Catering</a></li>
@@ -702,6 +774,25 @@
             <br>
             <p>From our family to yours, we invite you to experience the warmth, hospitality, and incredible flavors
                 that make Syrian cuisine truly special.</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">Our Gallery</h2>
+        <div class="gallery-carousel">
+            <div class="gallery-track">
+                <div class="gallery-item"><img src="Images/Main Course/Beef Burger.png" alt="Beef Burger"></div>
+                <div class="gallery-item"><img src="Images/Main Course/Chicken Mandi.png" alt="Chicken Mandi"></div>
+                <div class="gallery-item"><img src="Images/Main Course/JordanianMansaf.png" alt="Jordanian Mansaf">
+                </div>
+                <div class="gallery-item"><img src="Images/Main Course/LambMansaf.png" alt="Lamb Mansaf"></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="gallery-item"><img src="Images/Main Course/Beef Burger.png" alt="Beef Burger"></div>
+                <div class="gallery-item"><img src="Images/Main Course/Chicken Mandi.png" alt="Chicken Mandi"></div>
+                <div class="gallery-item"><img src="Images/Main Course/JordanianMansaf.png" alt="Jordanian Mansaf">
+                </div>
+                <div class="gallery-item"><img src="Images/Main Course/LambMansaf.png" alt="Lamb Mansaf"></div>
+            </div>
         </div>
     </section>
 
