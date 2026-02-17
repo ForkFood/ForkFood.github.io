@@ -802,10 +802,42 @@
                 justify-content: center;
             }
         }
+
+        .ramadan-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--dark);
+            color: var(--gold);
+            text-align: center;
+            padding: 0.8rem 1rem;
+            z-index: 1001;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 2px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .ramadan-banner i {
+            color: var(--primary);
+        }
     </style>
 </head>
 
 <body>
+    <div class="ramadan-banner">
+        <i class="fas fa-moon"></i>
+        <span>Ramadan Closure: We will be closed for renovations during the Holy Month of Ramadan. Re-opening on the
+            first day of Eid!</span>
+        <i class="fas fa-moon"></i>
+    </div>
+
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
@@ -1169,6 +1201,29 @@
                 nav.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
             }
         });
+
+        // Ramadan Banner Adjustment
+        function adjustLayoutForBanner() {
+            const banner = document.querySelector('.ramadan-banner');
+            const nav = document.querySelector('nav');
+            const hero = document.querySelector('.hero');
+
+            if (banner && nav) {
+                const bannerHeight = banner.offsetHeight;
+                nav.style.top = bannerHeight + 'px';
+
+                // Adjust hero margin to account for banner + nav
+                // Original nav height is roughly handled by original hero margin (70px)
+                // We just need to add the banner height to the base margin
+                if (hero) {
+                    hero.style.marginTop = (70 + bannerHeight) + 'px';
+                }
+            }
+        }
+
+        window.addEventListener('load', adjustLayoutForBanner);
+        window.addEventListener('resize', adjustLayoutForBanner);
+
     </script>
 </body>
 
