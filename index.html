@@ -803,7 +803,7 @@
             }
         }
 
-        .ramadan-banner {
+        .status-banner {
             position: fixed;
             top: 0;
             left: 0;
@@ -824,18 +824,17 @@
             gap: 10px;
         }
 
-        .ramadan-banner i {
+        .status-banner i {
             color: var(--primary);
         }
     </style>
 </head>
 
 <body>
-    <div class="ramadan-banner">
-        <i class="fas fa-moon"></i>
-        <span>Ramadan Closure: We will be closed for renovations during the Holy Month of Ramadan. Re-opening on the
-            first day of Eid!</span>
-        <i class="fas fa-moon"></i>
+    <div class="status-banner">
+        <i class="fas fa-store"></i>
+        <span>We Are Open | Business as Usual</span>
+        <i class="fas fa-store"></i>
     </div>
 
     <nav>
@@ -1202,9 +1201,9 @@
             }
         });
 
-        // Ramadan Banner Adjustment
+        // Status Banner Adjustment
         function adjustLayoutForBanner() {
-            const banner = document.querySelector('.ramadan-banner');
+            const banner = document.querySelector('.status-banner');
             const nav = document.querySelector('nav');
             const hero = document.querySelector('.hero');
 
